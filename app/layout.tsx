@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Montserrat } from "@next/font/google";
+import { SessionProvider } from "lib/context/SessionContext";
 
 //https://beta.nextjs.org/docs/optimizing/fonts#with-tailwind-css
 //const oswald = Oswald({ weight: "variable", subsets: ["latin"], variable: "--font-paragraph" });
@@ -17,7 +18,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body>{children}</body>
+      <SessionProvider>
+        <body>{children}</body>
+      </SessionProvider>
     </html>
   );
 }

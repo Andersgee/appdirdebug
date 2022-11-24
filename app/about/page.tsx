@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Hello } from "./Hello";
 
 export default function Page() {
   return (
@@ -6,6 +7,7 @@ export default function Page() {
       <div>about</div>
       <p>some paragraph here</p>
       <Link href="/">go home</Link>
+      <Hello />
     </div>
   );
 }
