@@ -1,11 +1,8 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import { db } from "lib/db/edge";
 import type { NextApiRequest, NextApiResponse } from "next";
+import { db } from "lib/db/edge";
 import { env } from "lib/env/server.mjs";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  console.log("running userId");
-
   const { key, handle } = req.query;
   if (typeof key !== "string" || key !== env.FETCH_KEY) {
     return res.status(401).end();
