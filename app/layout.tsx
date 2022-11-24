@@ -1,4 +1,4 @@
-import "./globals.css";
+import "lib/styles/global.css";
 import { Montserrat } from "@next/font/google";
 
 //https://beta.nextjs.org/docs/optimizing/fonts#with-tailwind-css
