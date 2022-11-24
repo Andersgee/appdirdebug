@@ -1,6 +1,7 @@
-import { TrpcProvider } from "lib/context/TrpcContext";
 import Link from "next/link";
 import { SearchHandle } from "./SearchHandle";
+import { ShowDialog } from "./ShowDialog";
+import { ToggleDialog } from "./ToggleDialog";
 
 export default function Page() {
   return (
@@ -8,9 +9,9 @@ export default function Page() {
       <div>example</div>
       <p>search for existing handle</p>
       <Link href="/">go home</Link>
-      <TrpcProvider>
-        <SearchHandle />
-      </TrpcProvider>
+      <SearchHandle />
+      <ToggleDialog />
+      <ShowDialog />
     </div>
   );
 }

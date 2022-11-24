@@ -1,6 +1,6 @@
 "use client";
 
-import { useId, useState } from "react";
+import { useState } from "react";
 import { trpc } from "lib/utils/trpc";
 
 type Props = {
@@ -8,7 +8,6 @@ type Props = {
 };
 
 export function SearchHandle({ className = "" }: Props) {
-  const id = useId();
   const [text, setText] = useState("");
   const { data: exists } = trpc.handle.exists.useQuery({ text });
 
