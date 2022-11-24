@@ -176,6 +176,11 @@
     tiny-glob "^0.2.9"
     tslib "^2.4.0"
 
+"@planetscale/database@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@planetscale/database/-/database-1.4.0.tgz#75f16b96729397510a47623ce36dc5d410d6bdbc"
+  integrity sha512-lva57Z/Nz57ocB3dwaWPDGMbb+dj5HtooVB9c0DPcAF9SHbQyfovDyGK5bDgcmCMVoonfblcYv7fr+WBLc3xNw==
+
 "@prisma/client@^4.6.1":
   version "4.6.1"
   resolved "https://registry.yarnpkg.com/@prisma/client/-/client-4.6.1.tgz#e8e1d347ecbff44158d21b6591bb99650c8503a8"
@@ -572,6 +577,11 @@ damerau-levenshtein@^1.0.8:
   version "1.0.8"
   resolved "https://registry.yarnpkg.com/damerau-levenshtein/-/damerau-levenshtein-1.0.8.tgz#b43d286ccbd36bc5b2f7ed41caf2d0aba1f8a6e7"
   integrity sha512-sdQSFB7+llfUcQHUQO3+B8ERRj0Oa4w9POWMI/puGtuf7gFywGmkaLCElnudfTiKZV+NvHqL0ifzdrI8Ro7ESA==
+
+date-fns@^2.29.3:
+  version "2.29.3"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.29.3.tgz#27402d2fc67eb442b511b70bbdf98e6411cd68a8"
+  integrity sha512-dDCnyH2WnnKusqvZZ6+jA1O51Ibt8ZMRNkDZdyAyK4YfbDwa/cEmuztzG5pk6hqlp9aSBPYcjOlktquahGwGeA==
 
 debug@^2.6.9:
   version "2.6.9"
@@ -1404,6 +1414,18 @@ json5@^1.0.1:
   dependencies:
     array-includes "^3.1.5"
     object.assign "^4.1.3"
+
+kysely-planetscale@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/kysely-planetscale/-/kysely-planetscale-1.1.0.tgz#2011f39cc6bd90c1875bcafca5147afa9c9ade72"
+  integrity sha512-0gtQj5E5UsspwBWlPEQ2A5fqx3WUwJmt4OlKUsWbDeo0QAG92Txsfje+sdyR4aUM4k8wr+QPv06/A+djKou/yg==
+  dependencies:
+    date-fns "^2.29.3"
+
+kysely@^0.22.0:
+  version "0.22.0"
+  resolved "https://registry.yarnpkg.com/kysely/-/kysely-0.22.0.tgz#8aac53942da3cadc604d7d154a746d983fe8f7b9"
+  integrity sha512-ZE3qWtnqLOalodzfK5QUEcm7AEulhxsPNuKaGFsC3XiqO92vMLm+mAHk/NnbSIOtC4RmGm0nsv700i8KDp1gfQ==
 
 language-subtag-registry@~0.3.2:
   version "0.3.22"

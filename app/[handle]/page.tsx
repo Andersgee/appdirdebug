@@ -1,3 +1,5 @@
+import { env } from "lib/env/server.mjs";
+
 //export const preferredRegion = "edge";
 export const revalidate = 30;
 export const dynamicParams = true;
@@ -24,13 +26,15 @@ type Props = {
   params: { handle: string };
 };
 
-async function getUser(handle: string) {
+async function getUserId(handle: string) {
   try {
-    //const url = "http://localhost:3000/api/user";
-    const url = absUrl(`/api/user?handle=${handle}`);
+    const url = absUrl(`/api/userId?key=${env.FETCH_KEY}&handle=${handle}`);
     const res = await fetch(url, { next: { revalidate: 30 } });
-
-    return await res.json();
+    if (res.ok) {
+      return await res.text();
+    } else {
+      return null;
+    }
   } catch (error) {
     return null;
   }
@@ -38,15 +42,15 @@ async function getUser(handle: string) {
 
 export default async function Page({ params }: Props) {
   //console.log("in page. params.handle:", params.handle);
-  const user = await getUser(params.handle);
-  if (!user) {
+  const userId = await getUserId(params.handle);
+  if (!userId) {
     return <div>no user</div>;
   }
 
   return (
     <div>
       <div>params.handle: {params.handle}</div>
-      <div>user: {JSON.stringify(user)}</div>
+      <div>userId: {userId}</div>
     </div>
   );
 }
