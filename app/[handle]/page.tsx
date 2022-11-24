@@ -1,5 +1,10 @@
 //export const preferredRegion = "edge";
-//export const revalidate = 10;
+export const revalidate = 30;
+export const dynamicParams = true;
+
+export async function generateStaticParams() {
+  return [];
+}
 
 function getBaseUrl() {
   if (typeof window !== "undefined") return ""; // browser should use relative url
@@ -20,16 +25,23 @@ type Props = {
 };
 
 async function getUser(handle: string) {
-  //const url = "http://localhost:3000/api/user";
-  const url = absUrl(`/api/user?handle=${handle}`);
-  const res = await fetch(url, { next: { revalidate: 10 } });
+  try {
+    //const url = "http://localhost:3000/api/user";
+    const url = absUrl(`/api/user?handle=${handle}`);
+    const res = await fetch(url, { next: { revalidate: 30 } });
 
-  return await res.json();
+    return await res.json();
+  } catch (error) {
+    return null;
+  }
 }
 
 export default async function Page({ params }: Props) {
   //console.log("in page. params.handle:", params.handle);
   const user = await getUser(params.handle);
+  if (!user) {
+    return <div>no user</div>;
+  }
 
   return (
     <div>
