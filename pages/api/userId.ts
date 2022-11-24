@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { db } from "lib/db/edge";
+import { kysely } from "lib/dbclient/kysely";
 import { env } from "lib/env/server.mjs";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -12,7 +12,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(404).send("no user");
   }
 
-  const user = await db.connection().execute((db) => {
+  const user = await kysely.connection().execute((db) => {
     return db.selectFrom("User").where("User.handle", "=", handle).selectAll().executeTakeFirst();
   });
 

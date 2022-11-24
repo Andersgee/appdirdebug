@@ -3,7 +3,7 @@ import DiscordProvider from "next-auth/providers/discord";
 import GithubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
-import { prisma } from "lib/server/db/client";
+import { prisma } from "lib/dbclient/prisma";
 import { env } from "lib/env/server.mjs";
 
 export const authOptions: NextAuthOptions = {
