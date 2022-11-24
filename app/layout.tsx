@@ -1,4 +1,4 @@
-import "lib/styles/global.css";
+import "./globals.css";
 import { Montserrat } from "@next/font/google";
 
 //https://beta.nextjs.org/docs/optimizing/fonts#with-tailwind-css
@@ -9,11 +9,7 @@ const montserrat = Montserrat({
   variable: "--font-paragraph",
 });
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={montserrat.variable}>
       {/*

@@ -1,26 +1,78 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+@layer base {
   body {
-    color: white;
-    background: black;
+    @apply border-neutral-300  bg-neutral-50 text-neutral-800 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-100;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-sans text-lg font-medium text-black dark:text-white;
+  }
+
+  h1,
+  h2 {
+    letter-spacing: -0.03em;
+  }
+  /*
+  a {
+    @apply font-sans text-neutral-600 underline decoration-dotted  hover:text-neutral-500 hover:decoration-solid dark:text-neutral-300 dark:hover:text-neutral-200;
+  }
+  */
+  p,
+  pre {
+    @apply max-w-[55ch] font-paragraph text-base font-normal text-neutral-600 dark:text-neutral-300;
+    word-spacing: 0.5px;
+    letter-spacing: 0.15px;
+    line-height: 1.55;
+  }
+}
+
+/* same as container but 4 rem smaller max-width, 
+   except for lg which is 18 rem smaller, see gridTemplateColumns in tailwind.config.cjs  */
+
+/*
+phone: "1fr",
+        sm: "4rem 1fr",
+        md: "4rem 1fr 20rem",
+        lg: "18rem 1fr 25rem",
+*/
+@layer components {
+  .headercontainer {
+    width: 100%;
+    /*
+    margin-right: auto;
+    margin-left: auto;
+    */
+  }
+  @media (min-width: 640px) {
+    .headercontainer {
+      max-width: 576px; /*sm*/
+    }
+  }
+  @media (min-width: 988px) {
+    .headercontainer {
+      max-width: 604px; /*md */
+    }
+  }
+  @media (min-width: 1266px) {
+    .headercontainer {
+      max-width: 578px; /*lg*/
+    }
+  }
+  @media (min-width: 1380px) {
+    .headercontainer {
+      max-width: 692px;
+    }
+  }
+  @media (min-width: 1536px) {
+    .headercontainer {
+      max-width: 848px;
+    }
   }
 }
