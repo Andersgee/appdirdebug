@@ -6,7 +6,7 @@ export default function Page() {
     <div>
       <div>about</div>
       <p>some paragraph here</p>
-      <Link href="/">go home</Link>
+      <Link href="/about2">go about2</Link>
       <Hello />
     </div>
   );
