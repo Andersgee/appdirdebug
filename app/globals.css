@@ -49,14 +49,6 @@ xl:  988-1078: 80px 620px 288px
     width: 100%;
   }
 
-  /*
-  "sm": "500px",
-        "md": "600px",
-        "lg": "700px",
-        "xl": "988px",
-        "2xl": "1078px",
-        "3xl": "1266px",
-  */
   @media (min-width: 500px) {
     .feedwidth {
       max-width: 436px;
