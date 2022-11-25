@@ -16,7 +16,7 @@ const montserrat = Montserrat({
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={montserrat.variable}>
+    <html lang="en" className={`${montserrat.variable} dark`}>
       <head />
       <Script id="theme-script">{THEME_SCRIPT_STRING}</Script>
       <SessionProvider>
