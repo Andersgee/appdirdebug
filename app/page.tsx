@@ -5,10 +5,13 @@ export default function Page() {
     <div>
       <div className="bg-red-500 dark:bg-green-500">hello world</div>
       <p>some paragraph here</p>
-      <Link href="/about">go about</Link>
-      <Link href="/deserunt">go to deserunt</Link>
-      <Link href="/ad">go to ad</Link>
-      <Link href="/kekker">go to kekker</Link>
+      <div className="flex flex-col gap-2">
+        <Link href="/about">go about</Link>
+        <Link href="/deserunt">go to deserunt</Link>
+        <Link href="/ad">go to ad</Link>
+        <Link href="/kekker">go to kekker</Link>
+        <Link href="/example">go to example</Link>
+      </div>
     </div>
   );
 }

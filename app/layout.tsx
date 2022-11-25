@@ -5,6 +5,7 @@ import { DialogProvider } from "lib/context/DialogContext";
 import { TrpcProvider } from "lib/context/TrpcContext";
 import Script from "next/script";
 import { THEME_SCRIPT_STRING } from "lib/utils/theme";
+import { SignInDialog } from "./Signin";
 
 //https://beta.nextjs.org/docs/optimizing/fonts#with-tailwind-css
 //const oswald = Oswald({ weight: "variable", subsets: ["latin"], variable: "--font-paragraph" });
@@ -22,7 +23,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <SessionProvider>
         <TrpcProvider>
           <DialogProvider>
-            <body>{children}</body>
+            <body>
+              <SignInDialog />
+              <div>{children}</div>
+            </body>
           </DialogProvider>
         </TrpcProvider>
       </SessionProvider>
