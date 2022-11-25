@@ -3,6 +3,7 @@ import { Montserrat } from "@next/font/google";
 import { SessionProvider } from "lib/context/SessionContext";
 import { DialogProvider } from "lib/context/DialogContext";
 import { TrpcProvider } from "lib/context/TrpcContext";
+import Script from "next/script";
 
 //https://beta.nextjs.org/docs/optimizing/fonts#with-tailwind-css
 //const oswald = Oswald({ weight: "variable", subsets: ["latin"], variable: "--font-paragraph" });
@@ -12,14 +13,11 @@ const montserrat = Montserrat({
   variable: "--font-paragraph",
 });
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={montserrat.variable}>
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
       <head />
+      <Script id="theme-script">{`console.log('Hello world!');`}</Script>
       <SessionProvider>
         <TrpcProvider>
           <DialogProvider>

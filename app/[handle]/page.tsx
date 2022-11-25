@@ -17,7 +17,7 @@ export default async function Page({ params }: Props) {
 
   return (
     <div>
-      <div>params.handle: {params.handle}</div>
+      <div className="bg-red-500 dark:bg-green-500">params.handle: {params.handle}</div>
       <div>userId: {userId}</div>
     </div>
   );
