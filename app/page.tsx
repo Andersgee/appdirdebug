@@ -7,10 +7,12 @@ export default function Page() {
       <p>some paragraph here</p>
       <div className="flex flex-col gap-2">
         <Link href="/about">go about</Link>
+
+        <Link href="/example">go to example</Link>
+        <div>users:</div>
         <Link href="/deserunt">go to deserunt</Link>
         <Link href="/ad">go to ad</Link>
         <Link href="/kekker">go to kekker</Link>
-        <Link href="/example">go to example</Link>
       </div>
     </div>
   );
