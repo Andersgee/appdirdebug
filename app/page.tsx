@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ClientLink } from "./ClientLink";
 
 export default function Page() {
   return (
@@ -19,10 +20,10 @@ export default function Page() {
         <Link href="/laboris">go to laboris</Link>
 
         <h2 className="mt-4">existing but not pregenerated</h2>
-        <Link href="/deserunt">go to deserunt</Link>
-        <Link href="/magna">go to magna</Link>
-        <Link href="/commodo">go to commodo</Link>
-        <Link href="/ad">go to ad</Link>
+        <ClientLink href="/deserunt">go to deserunt</ClientLink>
+        <ClientLink href="/magna">go to magna</ClientLink>
+        <ClientLink href="/commodo">go to commodo</ClientLink>
+        <ClientLink href="/ad">go to ad</ClientLink>
 
         <h2 className="mt-4">nonexisting</h2>
         <Link href="/kekker">go to kekker</Link>
