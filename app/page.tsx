@@ -13,12 +13,12 @@ export default function Page() {
         <Link href="/example">go to example</Link>
         <h1>testing caching and page load time... for user pages</h1>
         <h2 className="mt-4">existing pregenerated</h2>
-        <Link href="/eu">go to eu</Link>
-        <Link href="/aliqua">go to aliqua</Link>
-        <Link href="/tempor">go to tempor</Link>
-        <Link href="/ullamco">go to ullamco</Link>
-        <Link href="/mollit">go to mollit</Link>
-        <Link href="/laboris">go to laboris</Link>
+        <Link href="/u/eu">go to eu</Link>
+        <Link href="/u/aliqua">go to aliqua</Link>
+        <Link href="/u/tempor">go to tempor</Link>
+        <Link href="/u/ullamco">go to ullamco</Link>
+        <Link href="/u/mollit">go to mollit</Link>
+        <Link href="/u/laboris">go to laboris</Link>
 
         {/*
         <h2 className="mt-4">existing but not pregenerated</h2>
@@ -30,14 +30,14 @@ export default function Page() {
         <ClientLinks />
 
         <h2 className="mt-4">nonexisting</h2>
-        <Link href="/kekker">go to kekker</Link>
-        <Link href="/berkor">go to berkor</Link>
-        <Link href="/mamma">go to mamma</Link>
+        <Link href="/u/kekker">go to kekker</Link>
+        <Link href="/u/berkor">go to berkor</Link>
+        <Link href="/u/mamma">go to mamma</Link>
 
         <h2 className="mt-4">nonexisting generated anyway?..</h2>
-        <Link href="/kekker">go to kekker</Link>
-        <Link href="/berkor">go to berkor</Link>
-        <Link href="/mamma">go to mamma</Link>
+        <Link href="/u/kekker">go to kekker</Link>
+        <Link href="/u/berkor">go to berkor</Link>
+        <Link href="/u/mamma">go to mamma</Link>
       </div>
     </div>
   );
