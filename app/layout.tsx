@@ -6,8 +6,8 @@ import { TrpcProvider } from "lib/context/TrpcContext";
 import { SignInDialog } from "./Signin";
 import { Nav } from "./Nav";
 import { Header } from "./Header";
-//import Script from "next/script";
-//import { THEME_SCRIPT_STRING } from "lib/utils/theme";
+import Script from "next/script";
+import { THEME_SCRIPT_STRING } from "lib/utils/theme";
 
 //https://beta.nextjs.org/docs/optimizing/fonts#with-tailwind-css
 //const oswald = Oswald({ weight: "variable", subsets: ["latin"], variable: "--font-paragraph" });
@@ -17,11 +17,11 @@ const montserrat = Montserrat({
   variable: "--font-paragraph",
 });
 
-//<Script id="theme-script">{THEME_SCRIPT_STRING}</Script>
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${montserrat.variable} dark`}>
       <head />
+      <Script id="theme-script">{THEME_SCRIPT_STRING}</Script>
       <SessionProvider>
         <TrpcProvider>
           <DialogProvider>
